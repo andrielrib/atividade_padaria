@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     exit(); 
 }
 
-$sql = "SELECT * FROM usuarios WHERE id=$id";
+$sql = "SELECT *  FROM uusuarios WHERE id=$id";
 $result = $conn -> query($sql);
 $row = $result -> fetch_assoc();
 

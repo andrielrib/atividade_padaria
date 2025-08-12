@@ -1,38 +1,38 @@
 <?php
-
 include 'db.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = trim($_POST['name']);
+    $email = trim($_POST['email']);
+    
+    if (!empty($name) && !empty($email)) {
+        $stmt = $conn->prepare("INSERT INTO usuarios (name, email) VALUES (?, ?)");
+        $stmt->bind_param("ss", $name, $email);
 
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-
-    $sql = " INSERT INTO usuarios (name,email) VALUE ('$name','$email')";
-
-    if ($conn->query($sql) === true) {
-        echo "Novo registro criado com sucesso.";
+        if ($stmt->execute()) {
+            echo "Novo registro criado com sucesso.";
+        } else {
+            echo "Erro ao inserir: " . $stmt->error;
+        }
+        $stmt->close();
     } else {
-        echo "Erro " . $sql . '<br>' . $conn->error;
+        echo "Por favor, preencha todos os campos.";
     }
     $conn->close();
 }
-
 ?>
 
-
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Adicionar Usuário</title>
 </head>
-
 <body>
 
-    <form method="POST" action="create.php">
-
+    <h2>Adicionar Usuário</h2>
+    <form method="POST" action="">
         <label for="name">Nome:</label>
         <input type="text" name="name" required>
 
@@ -40,11 +40,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="email" name="email" required>
 
         <input type="submit" value="Adicionar">
-
     </form>
 
-    <a href="read.php">Ver registros.</a>
+    <a href="read.php">Ver registros</a>
 
 </body>
-
 </html>

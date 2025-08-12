@@ -4,9 +4,9 @@ include 'db.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = trim($_POST['name']);
     $email = trim($_POST['email']);
-    
+    $telefone = trim($_POST['telefone']);
     if (!empty($name) && !empty($email)) {
-        $stmt = $conn->prepare("INSERT INTO usuarios (name, email) VALUES (?, ?)");
+        $stmt = $conn->prepare("INSERT INTO usuarios (name, email, telefone) VALUES (?, ?)");
         $stmt->bind_param("ss", $name, $email);
 
         if ($stmt->execute()) {

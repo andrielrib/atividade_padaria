@@ -1,6 +1,9 @@
 <?php
 include 'db.php';
 
+//ta dando erro na linha 2 e 21 
+
+
 if (isset($_GET['add'])) {
     $id_produto = $_GET['add'];
 

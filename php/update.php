@@ -1,60 +1,37 @@
 <?php
-
 include 'db.php';
 
-$id = $_GET['id'];
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-
-    $sql = "UPDATE usuarios SET name ='$name',email ='$email' WHERE id=$id";
-
-    if ($conn->query($sql) === true) {
-        echo "Registro atualizado com sucesso.
-        <a href='read.php'>Ver registros.</a>
-        ";
-    } else {
-        echo "Erro " . $sql . '<br>' . $conn->error;
-    }
-    $conn->close();
-    exit(); 
+    $sql = "SELECT * FROM produtos WHERE id=$id";
+    $result = $conn->query($sql);
+    $produto = $result->fetch_assoc();
 }
 
-$sql = "SELECT *  FROM uusuarios WHERE id=$id";
-$result = $conn -> query($sql);
-$row = $result -> fetch_assoc();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $id = $_POST['id'];
+    $nome = $_POST['nome'];
+    $preco = $_POST['preco'];
+    $categoria = $_POST['categoria'];
 
+    $sql = "UPDATE produtos SET nome='$nome', preco='$preco', categoria='$categoria' WHERE id=$id";
 
+    if ($conn->query($sql) === TRUE) {
+        echo "Produto atualizado com sucesso!";
+    } else {
+        echo "Erro: " . $conn->error;
+    }
+}
 ?>
 
+<h2>Editar Produto</h2>
+<form method="POST">
+    <input type="hidden" name="id" value="<?php echo $produto['id']; ?>">
+    Nome: <input type="text" name="nome" value="<?php echo $produto['nome']; ?>" required><br>
+    Preço: <input type="number" step="0.01" name="preco" value="<?php echo $produto['preco']; ?>" required><br>
+    Categoria: <input type="text" name="categoria" value="<?php echo $produto['categoria']; ?>" required><br>
+    <button type="submit">Atualizar</button>
+</form>
 
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>update</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-
-<body>
-
-    <form method="POST" action="update.php?id=<?php echo $row['id'];?>">
-
-        <label for="name">Nome:</label>
-        <input type="text" name="name" value="<?php echo $row['name'];?>" required>
-
-        <label for="email">Email:</label>
-        <input type="email" name="email" value="<?php echo $row['email'];?>" required>
-
-        <input type="submit" value="Atualizar">
-
-    </form>
-
-    <a href="read.php">Ver registros.</a>
-
-</body>
-
-</html>
+<a href="index.php">Voltar</a>

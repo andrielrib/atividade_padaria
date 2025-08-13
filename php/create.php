@@ -1,48 +1,29 @@
 <?php
 include 'db.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = trim($_POST['name']);
-    $email = trim($_POST['email']);
-    $telefone = trim($_POST['telefone']);
-    if (!empty($name) && !empty($email)) {
-        $stmt = $conn->prepare("INSERT INTO usuarios (name, email, telefone) VALUES (?, ?)");
-        $stmt->bind_param("ss", $name, $email);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nome = $_POST['nome'];
+    $preco = $_POST['preco'];
+    $categoria = $_POST['categoria'];
 
-        if ($stmt->execute()) {
-            echo "Novo registro criado com sucesso.";
-        } else {
-            echo "Erro ao inserir: " . $stmt->error;
-        }
-        $stmt->close();
+// tem que confirmar com o kaua c é só isso de "values"
+    $sql = "INSERT INTO produtos (nome, preco, categoria) VALUES ('$nome', '$preco', '$categoria')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Produto cadastrado com sucesso!";
     } else {
-        echo "Por favor, preencha todos os campos.";
+        echo "Erro: " . $conn->error;
     }
-    $conn->close();
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar Usuário</title>
-</head>
-<body>
+<h2>Cadastrar Produto</h2>
 
-    <h2>Adicionar Usuário</h2>
-    <form method="POST" action="">
-        <label for="name">Nome:</label>
-        <input type="text" name="name" required>
+<form method="POST">
+    Nome: <input type="text" name="nome" required><br>
+    Preço: <input type="number" step="0.01" name="preco" required><br>
+    Categoria: <input type="text" name="categoria" required><br>
+    <button type="submit">Cadastrar</button>
+</form>
 
-        <label for="email">Email:</label>
-        <input type="email" name="email" required>
-
-        <input type="submit" value="Adicionar">
-    </form>
-
-    <a href="read.php">Ver registros</a>
-
-</body>
-</html>
+<a href="index.php">Voltar</a>

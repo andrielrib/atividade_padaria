@@ -2,25 +2,20 @@
 include 'db.php';
 
 $tabela = $_GET['tabela'] ?? '';
+$id = $_GET['id'] ?? '';
 
 if (!in_array($tabela, ['produto', 'usuario', 'pedido'])) {
     die("Tabela inválida");
 }
 
-echo "<h2>Listagem de " . ucfirst($tabela) . "</h2>";
-echo "<a href='create.php?tabela=$tabela'>Adicionar</a><br><br>";
+$primary = [
+    'produto' => 'ID_produto',
+    'usuario' => 'ID_usuario',
+    'pedido' => 'ID_pedido'
+][$tabela];
 
-$result = $conn->query("SELECT * FROM $tabela");
+$conn->query("DELETE FROM $tabela WHERE $primary=$id");
 
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        echo implode(" | ", $row) . " ";
-        echo "<a href='update.php?tabela=$tabela&id={$row[array_key_first($row)]}'>Editar</a> | ";
-        echo "<a href='delete.php?tabela=$tabela&id={$row[array_key_first($row)]}'>Excluir</a><br>";
-    }
-} else {
-    echo "Nenhum registro encontrado.";
-}
-
-echo "<br><a href='index.php'>Voltar</a>";
+header("Location: read.php?tabela=$tabela");
 ?>
+

@@ -1,17 +1,21 @@
 <?php
 include 'db.php';
 
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
+$tabela = $_GET['tabela'] ?? '';
+$id = $_GET['id'] ?? '';
 
-    $sql = "DELETE FROM produtos WHERE id=$id";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "Produto excluído com sucesso!";
-    } else {
-        echo "Erro: " . $conn->error;
-    }
+if (!in_array($tabela, ['produto', 'usuario', 'pedido'])) {
+    die("Tabela inválida");
 }
+
+$primary = [
+    'produto' => 'ID_produto',
+    'usuario' => 'ID_usuario',
+    'pedido' => 'ID_pedido'
+][$tabela];
+
+$conn->query("DELETE FROM $tabela WHERE $primary=$id");
+
+header("Location: read.php?tabela=$tabela");
 ?>
 
-<a href="read.php">Voltar</a>

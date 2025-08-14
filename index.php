@@ -1,15 +1,22 @@
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<title>Padaria Bumba meu Pão</title>
+
+<?php 
+include 'style.php'; 
+?>
+
 </head>
 <body>
-    
+
+<h1>🍞 Padaria Bumba meu Pão</h1>
+<p>Bem-vindo ao sistema de gerenciamento.</p>
+
+<a class="btn" href="php/create.php">Cadastrar Produto</a>
+<a class="btn" href="php/read.php">Ver Produtos</a>
+<a class="btn" href="php/delete.php">Deletar Produtos</a>
+<a class="btn" href="php/read.php"> Atualizar Produtos</a>
+
 </body>
 </html>
-<h1>Padaria Bumba meu Pão</h1>
-<ul>
-    <li><a href="php/create.php">Cadastrar Produto</a></li>
-    <li><a href="php/read.php">Listar Produtos</a></li>
-</ul>

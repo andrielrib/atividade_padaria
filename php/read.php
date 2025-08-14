@@ -28,4 +28,4 @@ if ($result->num_rows > 0) {
     echo "Nenhum produto encontrado.";
 }
 ?>
-<a href="index.php">Voltar</a>
+<a href="php/index.php">Voltar</a>

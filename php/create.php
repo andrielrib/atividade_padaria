@@ -13,9 +13,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             VALUES ('$nome', '$descricao', '$preco', '$quantidade', '$id_usuario')";
 
     if ($conn->query($sql) === TRUE) {
-        $msg = "✅ Produto cadastrado com sucesso!";
+        $msg = " Produto cadastrado com sucesso!";
     } else {
-        $msg = "❌ Erro: " . $conn->error;
+        $msg = " Erro: " . $conn->error;
     }
 }
 ?>
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <button type="submit">Salvar</button>
 </form>
 
-<a class="btn" href="index.php">Voltar</a>
+<a class="btn" href="php/index.php">Voltar</a>
 
 </body>
 </html>

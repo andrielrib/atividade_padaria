@@ -36,5 +36,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     ID Usuário: <input type="number" name="id_usuario" value="<?php echo $produto['id_usuario']; ?>" required><br>
     <button type="submit">Salvar</button>
 </form>
-<a href="index.php">Voltar</a>
+<a href="php/index.php">Voltar</a>
 

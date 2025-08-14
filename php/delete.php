@@ -12,4 +12,4 @@ if (isset($_GET['id'])) {
     }
 }
 ?>
-<a href="index.php">Voltar</a>
+<a href="php/index.php">Voltar</a>

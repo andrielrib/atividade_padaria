@@ -1,5 +1,5 @@
 
-CREATE DATABASE atividades_padaria;
+/*CREATE DATABASE atividades_padaria;
 
 USE atividades_padaria;
 
@@ -42,3 +42,4 @@ CREATE TABLE pedidos (
     FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
     FOREIGN KEY (id_produto) REFERENCES produtos(id_produto),
 );
+/*

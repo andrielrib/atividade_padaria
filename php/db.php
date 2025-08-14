@@ -1,12 +1,13 @@
 <?php
-$host = "localhost";
-$user = "root"; 
-$pass = "root"; 
+
+$servername = "localhost";
+$username = "root";
+$password = "root";
 $dbname = "atividades_padaria";
 
-$conn = new mysqli($host, $user, $pass, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
-    die("Erro na conexão: " . $conn->connect_error);
+    die("Conexao falhou: " . $conn->connect_error);
 }
 ?>

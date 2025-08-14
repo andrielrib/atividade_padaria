@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
 <meta charset="UTF-8">
 <title>Cadastrar Produto</title>
-<?php include 'style.php'; ?>
+
 </head>
 <body>
 

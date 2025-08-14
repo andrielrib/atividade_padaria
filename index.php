@@ -3,10 +3,6 @@
 <meta charset="UTF-8">
 <title>Padaria Bumba meu Pão</title>
 
-<?php 
-include 'style.php'; 
-?>
-
 </head>
 <body>
 

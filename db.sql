@@ -1,5 +1,5 @@
 
-/*CREATE DATABASE atividades_padaria;
+CREATE DATABASE atividades_padaria;
 
 USE atividades_padaria;
 
@@ -40,6 +40,5 @@ CREATE TABLE pedidos (
     status VARCHAR(50) NOT NULL,
 
     FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
-    FOREIGN KEY (id_produto) REFERENCES produtos(id_produto),
+    FOREIGN KEY (id_produto) REFERENCES produtos(id_produto)
 );
-/*

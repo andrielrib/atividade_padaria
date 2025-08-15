@@ -11,7 +11,7 @@ body {
 }
 
 h1 {
-    color: #5C4033; /* Marrom escuro */
+    color: #5C4033;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -54,7 +54,7 @@ form textarea {
 }
 
 form button {
-    background-color: #8B4513; /* Marrom sela */
+    background-color: #8B4513;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -65,13 +65,13 @@ form button {
 }
 
 form button:hover {
-    background-color: #A0522D; /* Siena */
+    background-color: #A0522D;
 }
 
 .btn {
     display: inline-block;
-    background-color: #D2B48C; /* Tan */
-    color: #5C4033; /* Marrom escuro */
+    background-color: #D2B48C;
+    color: #5C4033;
     padding: 10px 15px;
     border-radius: 5px;
     text-decoration: none;
@@ -81,7 +81,7 @@ form button:hover {
 }
 
 .btn:hover {
-    background-color: #5C4033; /* Marrom escuro */
+    background-color: #5C4033;
     color: white;
 }
 
@@ -101,8 +101,8 @@ th, td {
 }
 
 th {
-    background-color: #D2B48C; /* Tan */
-    color: #5C4033; /* Marrom escuro */
+    background-color: #D2B48C;
+    color: #5C4033;
 }
 
 tr:nth-child(even) {

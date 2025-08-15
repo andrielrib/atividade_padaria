@@ -42,3 +42,6 @@ CREATE TABLE pedidos (
     FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
     FOREIGN KEY (id_produto) REFERENCES produtos(id_produto)
 );
+
+INSERT INTO usuarios (email, nome, data_de_contratacao, telefone)
+VALUES ("joaozinho@gmail.com", "joaozinho", "2018/05/23", 4798349051);

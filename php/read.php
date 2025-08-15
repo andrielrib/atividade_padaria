@@ -6,7 +6,7 @@ include 'db.php';
 <head>
 <meta charset="UTF-8">
 <title>Ver Produtos</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" type="text/css" href="../style/style.css">
 </head>
 <body>
 

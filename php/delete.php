@@ -20,7 +20,7 @@ if (isset($_GET['id'])) {
 <head>
 <meta charset="UTF-8">
 <title>Excluir Produto</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" type="text/css" href="../style/style.css">
 </head>
 <body>
 

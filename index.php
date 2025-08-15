@@ -2,9 +2,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Padaria Bumba meu Pão</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 <body>
+    
 
 <div class="container">
     <h1>🍞 Padaria Bumba meu Pão</h1>

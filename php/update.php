@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
 <meta charset="UTF-8">
 <title>Atualizar Produto</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" type="text/css" href="../style/style.css">
 </head>
 <body>
 

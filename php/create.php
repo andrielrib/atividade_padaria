@@ -65,7 +65,7 @@ $msg = "";
         <button type="submit">Salvar</button>
     </form>
 
-    <a class="btn" href="index.php">Voltar</a>
+    <a class="btn" href="../index.php">Voltar</a>
 </div>
 
 </body>

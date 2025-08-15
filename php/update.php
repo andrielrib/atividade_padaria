@@ -27,7 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($conn->query($sql) === TRUE) {
         $msg = "Produto atualizado com sucesso!";
-        // Atualiza os dados do produto após a atualização para refletir no formulário
         $sql = "SELECT * FROM produtos WHERE id_produto=$id";
         $result = $conn->query($sql);
         $produto = $result->fetch_assoc();
@@ -41,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
 <meta charset="UTF-8">
 <title>Atualizar Produto</title>
-<link rel="stylesheet" href="style.css"> <!-- Adicione esta linha -->
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -73,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php else: ?>
         <p>Produto não encontrado para atualização.</p>
     <?php endif; ?>
-    <a class="btn" href="index.php">Voltar</a> <!-- Ajuste o caminho para index.php -->
+    <a class="btn" href="index.php">Voltar</a>
 </div>
 
 </body>

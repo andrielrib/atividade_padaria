@@ -27,7 +27,7 @@ if (isset($_GET['id'])) {
 <div class="container">
     <h1>Excluir Produto</h1>
     <?php if($msg) echo "<p class='" . (strpos($msg, "Erro") !== false ? "error-message" : "message") . "'>$msg</p>"; ?>
-    <a class="btn" href="index.php">Voltar</a>
+    <a class="btn" href="../index.php">Voltar</a>
 </div>
 
 </body>

@@ -1,7 +1,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Padaria Bumba meu Pão</title><link rel="stylesheet" href=">
+<title>Padaria Bumba meu Pão</title>
+<link rel="stylesheet" type="text/css" href="../style/style.css">
 </head>
 <body>
 

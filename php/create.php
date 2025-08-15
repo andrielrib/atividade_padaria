@@ -57,7 +57,8 @@ $msg = "";
         <label for="quantidade">Quantidade:</label>
         <input type="number" id="quantidade" name="quantidade" required>
         
-        
+        <label for="id_usuario">ID Usuário:</label>
+        <input type="number" id="id_usuario" name="id_usuario" required>
         
         <button type="submit">Salvar</button>
     </form>

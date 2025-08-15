@@ -7,16 +7,14 @@ $msg = "";
        $descricao = $_POST['descricao'];
        $preco = $_POST['preco'];
        $quantidade = $_POST['quantidade'];
-       $id_usuario = $_POST['id_usuario']; // Certifique-se de que este ID existe na tabela usuarios
+       $id_usuario = $_POST['id_usuario'];
 
-       // Prevenção básica contra SQL Injection
        $nome = $conn->real_escape_string($nome);
        $descricao = $conn->real_escape_string($descricao);
        $preco = (float)$preco;
        $quantidade = (int)$quantidade;
        $id_usuario = (int)$id_usuario;
 
-       // Verifique se o id_usuario existe na tabela usuarios
        $checkUser  = $conn->query("SELECT * FROM usuarios WHERE id_usuario = $id_usuario");
        if ($checkUser ->num_rows == 0) {
            $msg = "Erro: ID do usuário não existe.";

@@ -49,7 +49,7 @@ include 'db.php';
         echo "<p>Nenhum produto encontrado.</p>";
     }
     ?>
-    <a class="btn" href="index.php">Voltar</a>
+    <a class="btn" href="../index.php">Voltar</a>
 </div>
 
 </body>

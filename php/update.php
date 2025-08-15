@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php else: ?>
         <p>Produto não encontrado para atualização.</p>
     <?php endif; ?>
-    <a class="btn" href="index.php">Voltar</a>
+    <a class="btn" href="../index.php">Voltar</a>
 </div>
 
 </body>

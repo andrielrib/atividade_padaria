@@ -1,10 +1,7 @@
 # Atividade_padaria
 
 Explicação do Código – Sistema da Padaria Bumba Meu Pão
-
-Esse sistema foi feito em **PHP** e **MySQL** para gerenciar **produtos** da padaria. Ele permite **cadastrar, listar, editar e excluir** produtos de forma simples e rápida.
-
-
+veja a seguir a explicação
 
 Como o sistema funciona
 

@@ -7,7 +7,7 @@
 <body>
 
 <div class="container">
-    <h1>🍞 Padaria Bumba meu Pão</h1>
+    <h1>🍞 Padaria Bumba meu Pão 🍞</h1>
     <p>Bem-vindo ao sistema de gerenciamento.</p>
 
     <a class="btn" href="php/create.php">Cadastrar Produto</a>

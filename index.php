@@ -13,7 +13,9 @@
 
     <a class="btn" href="php/create.php">Cadastrar Produto</a>
     <a class="btn" href="php/read.php">Ver Produtos</a>
-    <a class="btn" href="php/read.php">Atualizar Produtos</a> 
+    <a class="btn" href="php/read.php">Atualizar Produtos</a>
+    <a class="btn" href="php/delete.php">Deletar Produtos</a>
+    
 </div>
 
 </body>

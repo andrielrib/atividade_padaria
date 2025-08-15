@@ -62,7 +62,7 @@ Como o sistema funciona
 4. Na listagem, você pode editar ou excluir qualquer produto.
 5. Sempre há botões para voltar para a página anterior ou para o início.
 
-Relatório
+Relatório:
 
 Atividade 6- Desenvolvimento de um CRUD para Padaria
 Desenvolvimento de Sistemas 
@@ -71,4 +71,13 @@ DS23M1
 Andriel Ribeiro
 Kaua Rieper Ribeiro
 Arthur de Souza Farias 
-Caio Poleza 
+Caio Poleza dos Santos
+
+
+
+
+
+
+screenshots
+![alt text](image-4.png)
+![alt text](image-5.png)

@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "root";
-$dbname = "atividades_padaria";
+$dbname = "padaria_bumba_pao";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

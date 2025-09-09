@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <?php if (!empty($_SESSION["user_pk"])): 
     
-        header("Location: php/read.php");
+        header("Location: principal.php");
 
     ?>
   

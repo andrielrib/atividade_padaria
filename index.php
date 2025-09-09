@@ -9,7 +9,7 @@ session_start();
 
 if (isset($_GET['logout'])) {
     session_destroy();
-    header("Location: index.php");
+    header("Location: padaria_bumba_pao");
     exit;
 }
 
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $user = $_POST["username"] ?? "";
     $pass = $_POST["password"] ?? "";
 
-    $stmt = $mysqli->prepare("SELECT id, username, senha FROM usuarios WHERE username=? AND senha=?");
+    $stmt = $mysqli->prepare("SELECT pk, username, senha FROM usuarios_login WHERE username=? AND senha=?");
     $stmt->bind_param("ss", $user, $pass);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -28,98 +28,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($dados) {
         $_SESSION["user_id"] = $dados["id"];
         $_SESSION["username"] = $dados["username"];
-        header("Location: index.php");
+        header("Location: padaria_bumba_pao");
         exit;
     } else {
         $msg = "Usuário ou senha incorretos!";
     }
 }
 ?>
-
-<!doctype html>
-<html lang="pt-br">
-<head>
-<meta charset="utf-8">
-<title>Login Simples</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<?php if (!empty($_SESSION["user_id"])): ?>
-  <div class="card">
-    <h3>Bem-vindo, <?= $_SESSION["username"] ?>!</h3>
-    <p>Sessão ativa.</p>
-    <p><a href="?logout=1">Sair</a></p>
-  </div>
-
-<?php else: ?>
-  <div class="card">
-    <h3>Login</h3>
-    <?php if ($msg): ?><p class="msg"><?= $msg ?></p><?php endif; ?>
-    <form method="post">
-      <input type="text" name="username" placeholder="Usuário" required>
-      <input type="password" name="password" placeholder="Senha" required>
-      <button type="submit">Entrar</button>
-    </form>
-    <p><small>Dica: admin / 123456</small></p>
-  </div>
-<?php endif; ?>
-
-</body>
-</html>
-login.php
-Exibindo style.css…
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <html>
 <head>
@@ -129,18 +44,29 @@ Exibindo style.css…
 </head>
 <body>
 
+
+
 <div class="container">
     <h1>🍞 Padaria Bumba meu Pão 🍞</h1>
     <p>Bem-vindo ao sistema de gerenciamento.</p>
 
-    <a class="btn" href="php/create.php">Cadastrar Produto</a>
-    <a class="btn" href="php/read.php">Ver Produtos</a>
+   <?php if (!empty($_SESSION["user_id"])): ?>
+  <div class="card">
+    <h3>Bem-vindo, <?= $_SESSION["username"] ?>!</h3>
+    <p>Sessão ativa.</p>
+    <p><a href="?logout=1">Sair</a></p>
+  </div>
 
-    <br>
-    <br>
-    <br>
-
-        <img src="img/bumba meu pão.png" alt="padareira">
+<?php else: ?>
+    <h3>Login</h3>
+    <?php if ($msg): ?><p class="msg"><?= $msg ?></p><?php endif; ?>
+    <form method="post">
+      <input type="text" name="username" placeholder="Usuário" required>
+      <input type="password" name="password" placeholder="Senha" required>
+      <a href="principal.php"><button type="submit">Entrar</button></a>
+    </form>
+    <p><small>Dica: admin / 123</small></p>
+<?php endif; ?> 
 
 </div>
 

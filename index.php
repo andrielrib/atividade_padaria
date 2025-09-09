@@ -129,8 +129,6 @@ Exibindo style.css…
 </head>
 <body>
 
-
-
 <div class="container">
     <h1>🍞 Padaria Bumba meu Pão 🍞</h1>
     <p>Bem-vindo ao sistema de gerenciamento.</p>

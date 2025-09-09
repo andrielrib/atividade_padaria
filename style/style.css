@@ -159,3 +159,29 @@ tr:hover {
     margin-bottom: 20px;
     text-align: center;
 }
+
+ body {
+      font-family: Arial, sans-serif;
+      max-width: 400px;
+      margin: 40px auto
+  }
+
+  .card {
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 6px
+  }
+
+  input {
+      width: 100%;
+      padding: 8px;
+      margin: 6px 0
+  }
+
+  button {
+      padding: 8px 12px
+  }
+
+  .msg {
+      color: red
+  }

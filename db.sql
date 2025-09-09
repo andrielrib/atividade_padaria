@@ -2,6 +2,7 @@
 CREATE DATABASE padaria_bumba_pao;
 
 USE padaria_bumba_pao;
+USE atividades_padaria_bumba;
 
 CREATE TABLE usuarios(
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
@@ -54,4 +55,3 @@ VALUES ('admin', '123');
 
 INSERT INTO usuarios (email, nome, data_de_contratacao, telefone)
 VALUES ("joaozinho@gmail.com", "joaozinho", "2018/05/23", 4798349051);
-

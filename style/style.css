@@ -9,6 +9,26 @@ body {
     align-items: center;
 }
 
+.card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 6px
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin: 6px 0
+}
+
+button {
+    padding: 8px 12px
+}
+
+.msg {
+    color: red
+}
+
 h1 {
     color: #5C4033;
     margin-bottom: 20px;

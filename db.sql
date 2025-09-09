@@ -1,7 +1,7 @@
 
-CREATE DATABASE atividades_padaria;
+CREATE DATABASE padaria_bumba_pao;
 
-USE atividades_padaria;
+USE padaria_bumba_pao;
 
 CREATE TABLE usuarios(
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
@@ -43,5 +43,15 @@ CREATE TABLE pedidos (
     FOREIGN KEY (id_produto) REFERENCES produtos(id_produto)
 );
 
+CREATE TABLE usuarios_login(
+     pk INT AUTO_INCREMENT PRIMARY KEY,
+     username VARCHAR(120) NOT NULL UNIQUE,
+    senha VARCHAR(225) NOT NULL
+);
+
+INSERT INTO usuarios_login(username, senha)
+VALUES ('admin', '123');
+
 INSERT INTO usuarios (email, nome, data_de_contratacao, telefone)
 VALUES ("joaozinho@gmail.com", "joaozinho", "2018/05/23", 4798349051);
+

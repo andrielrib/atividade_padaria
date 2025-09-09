@@ -7,20 +7,18 @@ $msg = "";
        $descricao = $_POST['descricao'];
        $preco = $_POST['preco'];
        $quantidade = $_POST['quantidade'];
-       $id_usuario = $_POST['id_usuario'];
 
        $nome = $conn->real_escape_string($nome);
        $descricao = $conn->real_escape_string($descricao);
        $preco = (float)$preco;
        $quantidade = (int)$quantidade;
-       $id_usuario = (int)$id_usuario;
 
        $checkUser  = $conn->query("SELECT * FROM usuarios WHERE id_usuario = $id_usuario");
        if ($checkUser ->num_rows == 0) {
            $msg = "Erro: ID do usuário não existe.";
        } else {
-           $sql = "INSERT INTO produtos (nome, descricao, preco, quantidade_estoque, id_usuario)
-                   VALUES ('$nome', '$descricao', '$preco', '$quantidade', '$id_usuario')";
+           $sql = "INSERT INTO produtos (nome, descricao, preco, quantidade_estoque)
+                   VALUES ('$nome', '$descricao', '$preco', '$quantidade')";
 
            if ($conn->query($sql) === TRUE) {
                $msg = "Produto cadastrado com sucesso!";
@@ -56,9 +54,6 @@ $msg = "";
         
         <label for="quantidade">Quantidade:</label>
         <input type="number" id="quantidade" name="quantidade" required>
-        
-        <label for="id_usuario">ID Usuário:</label>
-        <input type="number" id="id_usuario" name="id_usuario" required>
         
         <button type="submit">Salvar</button>
     </form>

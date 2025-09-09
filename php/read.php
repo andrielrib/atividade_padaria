@@ -25,7 +25,6 @@ include 'db.php';
                         <th>Descrição</th>
                         <th>Preço</th>
                         <th>Qtd Estoque</th>
-                        <th>ID Usuário</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
@@ -37,7 +36,6 @@ include 'db.php';
                     <td>{$row['descricao']}</td>
                     <td>{$row['preco']}</td>
                     <td>{$row['quantidade_estoque']}</td>
-                    <td>{$row['id_usuario']}</td>
                     <td>
                         <a class='btn' href='update.php?id={$row['id_produto']}'>Editar</a>
                         <a class='btn' href='delete.php?id={$row['id_produto']}' onclick='return confirm(\"Tem certeza que deseja excluir este produto?\")'>Excluir</a>

@@ -9,7 +9,7 @@ session_start();
 
 if (isset($_GET['logout'])) {
     session_destroy();
-    header("Location: padaria_bumba_pao");
+    header("Location: index.php");
     exit;
 }
 
@@ -26,9 +26,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->close();
 
     if ($dados) {
-        $_SESSION["user_id"] = $dados["id"];
+        $_SESSION["user_pk"] = $dados["pk"];
         $_SESSION["username"] = $dados["username"];
-        header("Location: padaria_bumba_pao");
+        header("Location: index.php");
         exit;
     } else {
         $msg = "Usuário ou senha incorretos!";
@@ -50,12 +50,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <h1>🍞 Padaria Bumba meu Pão 🍞</h1>
     <p>Bem-vindo ao sistema de gerenciamento.</p>
 
-   <?php if (!empty($_SESSION["user_id"])): ?>
-  <div class="card">
-    <h3>Bem-vindo, <?= $_SESSION["username"] ?>!</h3>
-    <p>Sessão ativa.</p>
-    <p><a href="?logout=1">Sair</a></p>
-  </div>
+<?php if (!empty($_SESSION["user_pk"])): 
+    
+        header("Location: php/read.php");
+
+    ?>
+  
 
 <?php else: ?>
     <h3>Login</h3>
@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <form method="post">
       <input type="text" name="username" placeholder="Usuário" required>
       <input type="password" name="password" placeholder="Senha" required>
-      <a href="principal.php"><button type="submit">Entrar</button></a>
+        <button type="submit">Entrar</button>
     </form>
     <p><small>Dica: admin / 123</small></p>
 <?php endif; ?> 

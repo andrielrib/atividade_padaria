@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <form method="post">
       <input type="text" name="username" placeholder="Usuário" required>
       <input type="password" name="password" placeholder="Senha" required>
-        <button type="submit">Entrar</button>
+      <button type="submit">Entrar</button>
     </form>
     <p><small>Dica: admin / 123</small></p>
 <?php endif; ?> 

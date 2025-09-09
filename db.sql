@@ -1,7 +1,7 @@
 
 CREATE DATABASE atividades_padaria;
 
-USE atividades_padaria;
+USE atividades_padaria_bumba;
 
 CREATE TABLE usuarios(
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,

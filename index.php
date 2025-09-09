@@ -50,21 +50,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <h1>🍞 Padaria Bumba meu Pão 🍞</h1>
     <p>Bem-vindo ao sistema de gerenciamento.</p>
 
-<<<<<<< HEAD
    <?php if (!empty($_SESSION["user_ipk"])): ?>
   <div class="card">
     <h3>Bem-vindo, <?= $_SESSION["username"] ?>!</h3>
     <p>Sessão ativa.</p>
     <p><a href="?logout=1">Sair</a></p>
   </div>
-=======
-<?php if (!empty($_SESSION["user_pk"])): 
-    
-        header("Location: php/read.php");
-
-    ?>
-  
->>>>>>> b0cdd81db601f3d9b635e15c04e9d1095e1ff557
 
 <?php else: ?>
     <h3>Login</h3>
@@ -72,11 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <form method="post">
       <input type="text" name="username" placeholder="Usuário" required>
       <input type="password" name="password" placeholder="Senha" required>
-<<<<<<< HEAD
       <button type="submit">Entrar</button>
-=======
-        <button type="submit">Entrar</button>
->>>>>>> b0cdd81db601f3d9b635e15c04e9d1095e1ff557
     </form>
     <p><small>Dica: admin / 123</small></p>
 <?php endif; ?> 
